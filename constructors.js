@@ -50,9 +50,36 @@ function expect(target) {
 //
 // Only add code to *THIS* section!
 
-// ????????
-// ????????
-// ????????
+function Dog(props) {
+  this.status = "normal"
+  this.hungry = true
+  if (props) {
+    if (props.hasOwnProperty("color")) {
+      this.color = props.color
+    }
+    if (props.hasOwnProperty("hungry")) {
+      this.hungry = props.hungry
+    }
+  }
+}
+
+function Human(prop) {
+  this.cool = false
+  if (prop) {
+    if (prop.hasOwnProperty("cool")) {
+      this.cool = prop.cool
+    }
+  }
+}
+
+Human.prototype = {
+  pet: function(dog) {
+    dog.status = "happy"
+  },
+  feed: function(dog) {
+    dog.hungry = false
+  }
+}
 
 //        __
 //   ____/ /___  ____ ______
