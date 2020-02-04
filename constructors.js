@@ -50,34 +50,68 @@ function expect(target) {
 //
 // Only add code to *THIS* section!
 
-function Dog(props) {
-  this.status = "normal"
-  this.hungry = true
-  if (props) {
-    if (props.hasOwnProperty("color")) {
-      this.color = props.color
-    }
-    if (props.hasOwnProperty("hungry")) {
-      this.hungry = props.hungry
+// function Dog(props) {
+//   this.status = "normal"
+//   this.hungry = true
+//   if (props) {
+//     if (props.hasOwnProperty("color")) {
+//       this.color = props.color
+//     }
+//     if (props.hasOwnProperty("hungry")) {
+//       this.hungry = props.hungry
+//     }
+//   }
+// }
+
+// function Human(prop) {
+//   this.cool = false
+//   if (prop) {
+//     if (props.hasOwnProperty("cool")) {
+//       this.cool = prop.cool
+//     }
+//   }
+// }
+
+// Human.prototype = {
+//   pet: function(dog) {
+//     dog.status = "happy"
+//   },
+//   feed: function(dog) {
+//     dog.hungry = false
+//   }
+// }
+
+// Trying class
+
+class Dog {
+  constructor(props) {
+    this.status = "normal"
+    this.hungry = true
+    if (props) {
+      if (props.hasOwnProperty("color")) {
+        this.color = props.color
+      }
+      if (props.hasOwnProperty("hungry")) {
+        this.hungry = props.hungry
+      }
     }
   }
 }
 
-function Human(prop) {
-  this.cool = false
-  if (prop) {
-    if (prop.hasOwnProperty("cool")) {
-      this.cool = prop.cool
+class Human {
+  constructor(prop) {
+    this.cool = false
+    if (prop) {
+      if (prop.hasOwnProperty("cool")) {
+        this.cool = prop.cool
+      }
     }
   }
-}
-
-Human.prototype = {
-  pet: function(dog) {
-    dog.status = "happy"
-  },
-  feed: function(dog) {
-    dog.hungry = false
+  pet(thing) {
+    thing.status = "happy"
+  }
+  feed(thing) {
+    thing.hungry = false
   }
 }
 
